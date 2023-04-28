@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 600px;
+    height: 35px;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 50px;
+    box-shadow:0 2px 5px 1px rgba(64,60,67,.16);
+    border: 1px solid transparent;
+    font-size: 14px;
+    color: #202124;
+    margin: 40px;
+}
+.input:hover {
+    box-shadow:0 2px 5px 1px rgba(64, 60, 67, 0.281);
+}
+.input:focus {
+    outline: none;
+    border: 1px solid transparent;
+    box-shadow:0 2px 5px 1px rgba(64, 60, 67, 0.281);
+
+}

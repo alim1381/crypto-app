@@ -4,6 +4,8 @@ import { getData } from '../services/api'
 import Coins from './Coins';
 import Loader from './shared/Loader';
 
+// Styles
+import styles from './Landing.module.css'
 export default function Landing() {
 
     const [data , setData] = useState([]);
@@ -22,12 +24,14 @@ export default function Landing() {
     }
     const searchCoins = data.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()))
   return (
-    <>
-      <input type="text" placeholder='Search' value={search} onChange={changeHandler} />
+    <div className={styles.container}>
+      <input className={styles.input} type="text" placeholder='Search' value={search} onChange={changeHandler} />
+
+      
         {
           data.length ? 
             searchCoins.map(coin => <Coins 
-                  key={coin.Landing}
+                  key={coin.id}
                   name={coin.name}
                   image={coin.image}
                   symbol={coin.symbol}
@@ -37,6 +41,7 @@ export default function Landing() {
             />) :
             <Loader />      
         }
-    </>
+      
+    </div>
   )
 }
