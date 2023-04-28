@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { getData } from '../services/api'
+import Loader from './shared/Loader';
 
 export default function Landing() {
 
-    const [data , setData] = useState();
+    const [data , setData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const data = await getData()
@@ -13,9 +14,13 @@ export default function Landing() {
         fetchData();
     } , [])
   return (
-    <div>
-
-        {data && <img src={data[0].image} alt='aks' />}
-    </div>
+    <>
+      <input type="text" placeholder='Search' />
+        {
+          data.length ? 
+          data.map(coin => <p key={coin.id}>{coin.symbol}</p>) :
+            <Loader />      
+        }
+    </>
   )
 }
