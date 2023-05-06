@@ -12,12 +12,14 @@ export default function Landing() {
     const [search , setSearch] = useState("");
 
     useEffect(() => {
+      // alert("اگر صفحه بارگذاری نمیشه دلیلش محدودیتیه که ای پی آیی که ازش استفاده میکنم داره لطفا چند دقیقه دیگه امتحان کنید😅")
         const fetchData = async () => {
             const data = await getData()
             setData(data)
 
         }
         fetchData();
+
     } , [])
     const changeHandler = (event) => {
       setSearch(event.target.value)

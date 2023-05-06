@@ -26,3 +26,21 @@
     box-shadow:0 2px 5px 1px rgba(64, 60, 67, 0.281);
 
 }
+
+@media (max-width: 700px) {
+    .input {
+        width: 450px;
+    }
+}
+@media (max-width: 500px) {
+    .input {
+        width: 300px;
+        height: 30px;
+    }
+}
+@media (max-width: 330px) {
+    .input {
+        width: 280px;
+        height: 30px;
+    }
+}

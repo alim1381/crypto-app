@@ -9,7 +9,7 @@ export default function Coins({name , image , symbol , price , marketCap , price
         <span >{symbol.toUpperCase()}</span>
         <span>$ {price.toLocaleString()}</span>
         <span className={priceChange > 0 ? styles.priceChangeGreen : styles.priceChangeRed}>% {priceChange && priceChange.toFixed(2)}</span>
-        <span>$ {marketCap.toLocaleString()}</span>
+        <span className={styles.cap}>$ {marketCap.toLocaleString()}</span>
     </div>
   )
 }
